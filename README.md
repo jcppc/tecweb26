@@ -1,4 +1,21 @@
-# 🧪 Home Lab Workshop  
+# 🧪 GeekLab Workshop (Tecweb 2026)
+
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Traefik](https://img.shields.io/badge/Traefik-24A1C1?style=for-the-badge&logo=traefikproxy&logoColor=white)
+![Portainer](https://img.shields.io/badge/Portainer-13BEF9?style=for-the-badge&logo=portainer&logoColor=white)
+![Heimdall](https://img.shields.io/badge/Heimdall-Dashboard-4A90E2?style=for-the-badge)
+![Pi-hole](https://img.shields.io/badge/Pi--hole-DNS-EA4335?style=for-the-badge&logo=pi-hole&logoColor=white)
+![Stirling PDF](https://img.shields.io/badge/Stirling--PDF-Service-6A5ACD?style=for-the-badge)
+![Ubuntu](https://img.shields.io/badge/Ubuntu%20Server-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
+![Docker Compose](https://img.shields.io/badge/Docker%20Compose-384D54?style=for-the-badge&logo=docker&logoColor=white)
+![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi%205-C51A4A?style=for-the-badge&logo=raspberrypi&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-000000?style=for-the-badge&logo=linux&logoColor=white)
+
+![GitHub repo size](https://img.shields.io/github/repo-size/jcppc/tecweb26)
+![GitHub last commit](https://img.shields.io/github/last-commit/jcppc/tecweb26)
+![GitHub stars](https://img.shields.io/github/stars/jcppc/tecweb26?style=social)
+
+
 ### Build Your Own Personal Mini Data-Center
 
 A **Home Lab** is a personal computing laboratory created at home using physical or virtualized hardware.  
@@ -24,20 +41,6 @@ It becomes your **personal innovation environment**, where you can explore techn
 
 ---
 
-## 🧭 Workshop Overview
-
-During this workshop, participants will learn how to:
-
-- Plan and design a **functional Home Lab architecture**
-- Select appropriate **technologies and infrastructure**
-- Deploy and interconnect services
-- Organize services into a coherent environment
-- Create a **personal mini data-center**
-
-By the end, each participant will have a **working Home Lab foundation** that can be continuously expanded.
-
----
-
 ## 🧱 What You Will Learn
 
 Participants will:
@@ -47,6 +50,8 @@ Participants will:
 - 🔗 **Install, configure, and interconnect** multiple services  
 - 🏗 Create a **personal infrastructure platform** for experimentation  
 - 📈 Develop an environment that can grow into a **personal mini data-center**
+
+By the end, each participant will have a **working Home Lab foundation** that can be continuously expanded.
 
 ---
 
@@ -107,3 +112,32 @@ Over time, this can evolve into a **personal cloud platform**.
 ---
 
 ## 📂 Repository Structure
+
+
+
+---
+
+## 🌱 After the Workshop
+
+Your Home Lab can grow into a platform for:
+
+- DevOps experimentation
+- Data engineering projects
+- Cybersecurity labs
+- Cloud architecture simulations
+- Software development environments
+- AI/ML experimentation
+
+Think of it as your **personal technology playground**.
+
+---
+
+## 🎯 Goal
+
+The goal is not just to build infrastructure, but to create a **sustainable personal learning platform** where you can continuously experiment, learn, and innovate.
+
+---
+
+💡 *Build it. Break it. Fix it. Learn from it.*
+
+Welcome to your **GeekLab journey**.
