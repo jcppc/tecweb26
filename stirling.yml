@@ -1,0 +1,32 @@
+networks:
+  traefik:
+    external: true
+
+volumes:
+  stirling-data:
+    name: stirling-data
+
+services:
+  pdf:
+    image: stirlingtools/stirling-pdf:latest
+    container_name: pdf
+    hostname: pdf
+    restart: unless-stopped
+
+    networks:
+      - traefik
+
+    volumes:
+      - stirling-data:/configs
+
+    labels:
+      - "traefik.enable=true"
+
+      # Router
+      - "traefik.http.routers.pdf.rule=Host(`pdf.tecweb26.com`)"
+      - "traefik.http.routers.pdf.entrypoints=websecure"
+      - "traefik.http.routers.pdf.tls=true"
+      - "traefik.http.routers.pdf.tls.certresolver=letsencrypt"
+
+      # Service (internal HTTP)
+      - "traefik.http.services.pdf.loadbalancer.server.port=8080"

@@ -1,0 +1,59 @@
+networks:
+  traefik:
+    external: true
+
+volumes:
+  traefik-data:
+    name: traefik-data
+
+services:
+  traefik:
+    image: traefik:latest
+    container_name: traefik
+    hostname: traefik
+    restart: unless-stopped
+
+    command:
+      # API
+      - --api.dashboard=true
+      - --api.insecure=true
+
+      # Providers
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+
+      # EntryPoints
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      - --entrypoints.web.http.redirections.entrypoint.to=websecure
+      - --entrypoints.web.http.redirections.entrypoint.scheme=https
+
+      # Tecweb26 (Let's Encrypt)
+      - --certificatesresolvers.le.tecweb26.email=admin@tecweb26.com
+      - --certificatesresolvers.le.tecweb26.storage=/tecweb26/tecweb26.json
+      - --certificatesresolvers.le.tecweb26.httpchallenge=true
+      - --certificatesresolvers.le.tecweb26.httpchallenge.entrypoint=web
+    
+    labels:
+      - traefik.enable=true
+
+      # HTTPS router for dashboard
+      - traefik.http.routers.traefik.rule=Host(`traefik.tecweb26.com`)
+      - traefik.http.routers.traefik.entrypoints=websecure
+      - traefik.http.routers.traefik.tls=true
+      - traefik.http.routers.traefik.tls.certresolver=le
+
+      # Bind to internal API service
+      - traefik.http.routers.traefik.service=api@internal
+      
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"   # Traefik dashboard (do not expose publicly)
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - traefik-data:/tecweb26
+
+    networks:
+      - traefik
