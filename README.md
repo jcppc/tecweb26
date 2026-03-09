@@ -55,6 +55,23 @@ By the end, each participant will have a **working Home Lab foundation** that ca
 
 ---
 
+## 🏗 Example Home Lab Stack
+
+A typical Home Lab environment may include:
+
+- **Docker / Docker Compose**
+- **Reverse Proxy / Gateway**
+- **Service Dashboard**
+- **DNS / Network utilities**
+- **Databases**
+- **Monitoring tools**
+- **Development services**
+
+Over time, this can evolve into a **personal cloud platform**.
+
+---
+
+
 ## 📚 Prerequisites
 
 Participants should have basic knowledge of:
@@ -95,21 +112,6 @@ Participants who want to build their Home Lab on dedicated hardware may bring:
 
 ---
 
-## 🏗 Example Home Lab Stack
-
-A typical Home Lab environment may include:
-
-- **Docker / Docker Compose**
-- **Reverse Proxy / Gateway**
-- **Service Dashboard**
-- **DNS / Network utilities**
-- **Databases**
-- **Monitoring tools**
-- **Development services**
-
-Over time, this can evolve into a **personal cloud platform**.
-
----
 
 
 ## 🌱 After the Workshop
