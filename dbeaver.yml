@@ -6,7 +6,7 @@ volumes:
   dbeaver-workspace: {}
 
 services:
-  cloudbeaver:
+  dbeaver:
     image: dbeaver/cloudbeaver:latest
     container_name: dbeaver
     hostname: dbeaver
