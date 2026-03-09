@@ -1,0 +1,32 @@
+networks:
+  traefik:
+    external: true
+
+volumes:
+  dbeaver-workspace: {}
+
+services:
+  cloudbeaver:
+    image: dbeaver/cloudbeaver:latest
+    container_name: dbeaver
+    hostname: dbeaver
+    restart: unless-stopped
+
+    networks:
+      - traefik
+
+    volumes:
+      - dbeaver-workspace:/opt/cloudbeaver/workspace
+
+    labels:
+      - "traefik.enable=true"
+
+      # Router
+      - "traefik.http.routers.dbeaver.rule=Host(`dbeaver.kiionlab.com`)"
+      - "traefik.http.routers.dbeaver.entrypoints=websecure"
+      - "traefik.http.routers.dbeaver.tls=true"
+      - "traefik.http.routers.dbeaver.tls.certresolver=le"
+
+      # Service (internal HTTP)
+      - "traefik.http.services.dbeaver.loadbalancer.server.port=8978"
+  

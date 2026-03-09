@@ -128,16 +128,31 @@ Your Home Lab can grow into a platform for:
 - Software development environments
 - AI/ML experimentation
 
-Think of it as your **personal technology playground**.
+Think of it as your **personal technology playground**, where the goal is not just to build infrastructure, but to create a **sustainable personal learning platform** where you can continuously experiment, learn, and innovate.
 
----
 
-## 🎯 Goal
-
-The goal is not just to build infrastructure, but to create a **sustainable personal learning platform** where you can continuously experiment, learn, and innovate.
-
----
 
 💡 *Build it. Break it. Fix it. Learn from it.*
 
 Welcome to your **GeekLab journey**.
+
+
+
+
+## 🎯 Setup Portainer
+
+### Install de Community Edition
+
+
+On your system command line run:
+
+- docker network create traefik
+
+- docker volume create portainer-data
+
+- docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer-data:/data portainer/portainer-ce:latest
+
+- Access web page on: https://localhost:9443  (later we will open it on: https://lab.tecweb26.com:9443 )
+
+- Create an admin username and password
+

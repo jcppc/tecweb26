@@ -4,8 +4,8 @@ networks:
 
 volumes:
   heimdall-data:
-      external: true
-
+      name: heimdall-data
+     
 services:
   heimdall:
     image: linuxserver/heimdall:latest

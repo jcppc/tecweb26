@@ -29,10 +29,10 @@ services:
       - --entrypoints.web.http.redirections.entrypoint.scheme=https
 
       # Tecweb26 (Let's Encrypt)
-      - --certificatesresolvers.le.tecweb26.email=admin@tecweb26.com
-      - --certificatesresolvers.le.tecweb26.storage=/tecweb26/tecweb26.json
-      - --certificatesresolvers.le.tecweb26.httpchallenge=true
-      - --certificatesresolvers.le.tecweb26.httpchallenge.entrypoint=web
+      - --certificatesresolvers.le.acme.email=admin@tecweb26.com
+      - --certificatesresolvers.le.acme.storage=/tecweb26/tecweb26.json
+      - --certificatesresolvers.le.acme.httpchallenge=true
+      - --certificatesresolvers.le.acme.httpchallenge.entrypoint=web
     
     labels:
       - traefik.enable=true
@@ -56,4 +56,4 @@ services:
       - traefik-data:/tecweb26
 
     networks:
-      - traefik
+      - traefik               

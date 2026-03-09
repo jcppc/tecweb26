@@ -1,0 +1,34 @@
+networks:
+  traefik:
+    external: true
+
+volumes:
+  agent-data:
+    name: agent-data
+
+services:
+      
+  agent:
+    image: langflowai/langflow:latest
+    container_name: agent
+    hostname: agent
+    pull_policy: always
+    restart: always
+     
+    volumes:
+      - agent-data:/app/langflow
+    
+    networks:
+      - traefik
+
+    labels:
+      - "traefik.enable=true"
+
+      # Router
+      - "traefik.http.routers.agent.rule=Host(`agent.kiionlab.com`)"
+      - "traefik.http.routers.agent.entrypoints=websecure"
+      - "traefik.http.routers.agent.tls=true"
+      - "traefik.http.routers.agent.tls.certresolver=le"                                                                                                                                                                                                                                                                                                                                        
+
+      # Service (internal HTTP)
+      - "traefik.http.services.agent.loadbalancer.server.port=7860"
