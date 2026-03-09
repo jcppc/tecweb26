@@ -25,7 +25,7 @@ services:
       - "traefik.enable=true"
 
       # Router
-      - "traefik.http.routers.agent.rule=Host(`agent.kiionlab.com`)"
+      - "traefik.http.routers.agent.rule=Host(`agent.tecweb26.com`)"
       - "traefik.http.routers.agent.entrypoints=websecure"
       - "traefik.http.routers.agent.tls=true"
       - "traefik.http.routers.agent.tls.certresolver=le"                                                                                                                                                                                                                                                                                                                                        

@@ -22,7 +22,7 @@ services:
       - "traefik.enable=true"
 
       # Router
-      - "traefik.http.routers.dbeaver.rule=Host(`dbeaver.kiionlab.com`)"
+      - "traefik.http.routers.dbeaver.rule=Host(`dbeaver.tecweb26.com`)"
       - "traefik.http.routers.dbeaver.entrypoints=websecure"
       - "traefik.http.routers.dbeaver.tls=true"
       - "traefik.http.routers.dbeaver.tls.certresolver=le"
